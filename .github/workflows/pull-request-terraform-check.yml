@@ -1,0 +1,18 @@
+name: Check Azure Terraform Code
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  check:
+    name: "Check Azure Terraform Code"
+    permissions:
+      contents: read
+      id-token: write
+    uses: launchbynttdata/launch-workflows/.github/workflows/reusable-terraform-check-azure.yml@feature/azure-terraform-check
+    secrets: inherit # pragma: allowlist secret
