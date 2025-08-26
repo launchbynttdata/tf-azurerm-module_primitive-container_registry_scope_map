@@ -1,6 +1,6 @@
 module github.com/launchbynttdata/tf-azurerm-module_primitive-container_registry_scope_map
 
-go 1.23.0
+go 1.24.6
 
 toolchain go1.24.6
 
