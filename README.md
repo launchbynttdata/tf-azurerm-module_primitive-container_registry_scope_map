@@ -54,7 +54,7 @@ Note that `make test` causes the creation of some ignored files on your filesyst
 
 These two commands will be utilized in the pipeline and if you cannot run them successfully locally, you are unlikely to see a different result in the pipeline.
 
-For convenience, a target exists that will execute both `make lint` and `make test` for you in sequence. Issue the following command to perfom a holistic lint and test:
+For convenience, a target exists that will execute both `make lint` and `make test` for you in sequence. Issue the following command to perform a holistic lint and test:
 
 ```
 make check
