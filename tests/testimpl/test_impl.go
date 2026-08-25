@@ -32,9 +32,9 @@ func TestComposableComplete(t *testing.T, ctx types.TestContext) {
 
 	scopeMapsClient := clientFactory.NewScopeMapsClient()
 
-	rgName := terraform.Output(t, ctx.TerratestTerraformOptions(), "resource_group_name")
-	registryName := terraform.Output(t, ctx.TerratestTerraformOptions(), "container_registry_name")
-	scopeMapName := terraform.Output(t, ctx.TerratestTerraformOptions(), "scope_map_name")
+	rgName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "resource_group_name")
+	registryName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "container_registry_name")
+	scopeMapName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "scope_map_name")
 
 	t.Run("ScopeMapWasCreated", func(t *testing.T) {
 		resp, err := scopeMapsClient.Get(context.TODO(), rgName, registryName, scopeMapName, nil)
